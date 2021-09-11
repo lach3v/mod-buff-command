@@ -79,6 +79,15 @@ public:
 		}
 		else
 		{
+        
+//			if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
+//			{
+//				handler->SendSysMessage("You can not do it now");
+//				handler->SetSentErrorMessage(true);
+//				return false;
+//            }
+        
+        
 			if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
 			{
 				handler->SendSysMessage("You can not do it now");
