@@ -78,48 +78,11 @@ public:
 			return true;
 		}
 		else
-		{
-        
-//			if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
-//			{
-//				handler->SendSysMessage("You can not do it now");
-//				handler->SetSentErrorMessage(true);
-//				return false;
-//            }
-
-//            if (mapEntry->addon == 3)
-//            {
-//                if (mapEntry->IsRaid())
-//                {
-//                    ..... letzt save this as one difficulty ???
-//                }
-//            }
-
-//if (GetMap()->!IsRaid())
-//{
-    // cannot use the command outside a raid instance
-//    {
-//        handler->SendSysMessage("You are not in a Raid instance");
-//        handler->SetSentErrorMessage(true);
-//        return false;
-//    }
-
-//if (GetMap()->IsRaid())
-//{
-    // cannot use the command in raid instance without a group
-//    if (!GetGroup())
-//    {
-//        handler->SendSysMessage("You are not in a group");
-//        handler->SetSentErrorMessage(true);
-//        return false;
-//    }
-
-//}
-        
+		{      
 //			if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
 			if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || !player->GetMap()->IsRaid() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
 			{
-				handler->SendSysMessage("You can not do it now");
+				handler->SendSysMessage("You can use this command only inside Raid instance");
 				handler->SetSentErrorMessage(true);
 				return false;
             }
