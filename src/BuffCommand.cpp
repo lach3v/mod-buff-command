@@ -139,14 +139,19 @@ public:
 //        }
 //    }
 
-    void OnMapChanged(Player *player)
-        {
-          if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
-            {
-               player->RemoveAura(75447);
+//    void OnMapChanged(Player *player)
+//        {
+//          if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
+//            {
+//               player->RemoveAura(75447);
 //               ClearBuffs(player, map);
-            }
-        }
+//            }
+//        }
+
+virtual void OnMapChanged(Player* /*player*/)
+    {
+        player->RemoveAura(75447);
+    }
 
 class Kargatum_BuffLoad : public WorldScript
 {
