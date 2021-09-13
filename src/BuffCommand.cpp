@@ -148,7 +148,7 @@ public:
 //            }
 //        }
 
-virtual void OnMapChanged(Player* /*player*/)
+void OnMapChanged(Player* /*player*/)
     {
         player->RemoveAura(75447);
     }
