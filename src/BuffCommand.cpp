@@ -87,6 +87,11 @@ public:
 				return false;
             }
 
+//            if (!player->GetMap()->IsRaid())
+//              {
+//                    player->RemoveAura(75447)
+//              }
+
             auto searchGUID = BuffCooldown.find(player->GetGUID());
 
             if (searchGUID == BuffCooldown.end())
