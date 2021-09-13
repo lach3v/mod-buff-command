@@ -150,6 +150,8 @@ public:
 
 void OnMapChanged(Player* /*player*/)
     {
+        Player* player = handler->GetSession()->GetPlayer();
+		std::string ArgStr = (char*)args;
         player->RemoveAura(75447);
     }
 
