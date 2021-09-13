@@ -143,7 +143,7 @@ public:
         {
           if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
             {
-               player->RemoveAura(75447)
+               player->RemoveAura(75447);
 //               ClearBuffs(player, map);
             }
         }
