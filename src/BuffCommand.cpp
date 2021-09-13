@@ -119,6 +119,25 @@ public:
 	}
 };
 
+//    void OnMapChanged(Player *player) override {
+//        if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
+//        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 0)
+//        {
+//            Map *map = player->GetMap();
+//            float difficulty = CalculateDifficulty(map, player);
+//			int dunLevel = CalculateDungeonLevel(map, player);
+//            int numInGroup = GetNumInGroup(player);
+//            ApplyBuffs(player, map, difficulty, dunLevel, numInGroup);
+//        }
+//    }
+
+    void OnMapChanged(Player *player) override {
+        if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
+        {
+           player->RemoveAura(75447)
+        }
+    }
+
 class Kargatum_BuffLoad : public WorldScript
 {
 public:
