@@ -139,32 +139,32 @@ public:
 //        }
 //    }
 
-//    void OnMapChanged(Player *player)
-//        {
-//          if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
-//            {
-//               player->RemoveAura(75447);
-//               ClearBuffs(player, map);
-//            }
-//        }
-
-void OnMapChanged(Player* /*player*/)
-    {
-    
-        Player* player = handler->GetSession()->GetPlayer();
-		std::string ArgStr = (char*)args;
-
-        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 0) {
-            handler->SendSysMessage("The command is currently disabled");
-            handler->SetSentErrorMessage(true);
-            return false;
-        }
-    
-        else
+    void OnMapChanged(Player *player)
         {
-            player->RemoveAura(75447);
+          if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
+            {
+               player->RemoveAura(75447);
+//               ClearBuffs(player, map);
+            }
         }
-    }
+
+//void OnMapChanged(Player* /*player*/)
+//    {
+    
+//        Player* player = handler->GetSession()->GetPlayer();
+//		std::string ArgStr = (char*)args;
+
+//        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 0) {
+//            handler->SendSysMessage("The command is currently disabled");
+//            handler->SetSentErrorMessage(true);
+//            return false;
+//        }
+//    
+//        else
+//        {
+//            player->RemoveAura(75447);
+//        }
+//    }
 
 class Kargatum_BuffLoad : public WorldScript
 {
