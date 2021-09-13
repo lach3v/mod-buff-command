@@ -150,9 +150,20 @@ public:
 
 void OnMapChanged(Player* /*player*/)
     {
+    
         Player* player = handler->GetSession()->GetPlayer();
 		std::string ArgStr = (char*)args;
-        player->RemoveAura(75447);
+
+        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 0) {
+            handler->SendSysMessage("The command is currently disabled");
+            handler->SetSentErrorMessage(true);
+            return false;
+        }
+    
+        else
+        {
+            player->RemoveAura(75447);
+        }
     }
 
 class Kargatum_BuffLoad : public WorldScript
