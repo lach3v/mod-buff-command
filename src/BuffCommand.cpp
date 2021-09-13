@@ -141,7 +141,8 @@ public:
 
     void OnMapChanged(Player *player)
         {
-          if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
+//          if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
+           if (!player->GetMap()->IsRaid())
             {
                player->RemoveAura(75447);
 //               ClearBuffs(player, map);
