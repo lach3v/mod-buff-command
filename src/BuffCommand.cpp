@@ -127,7 +127,8 @@ public:
     ClearBuffs() : PlayerScript("ClearBuffs") {}
     
     void OnMapChanged(Player *player) override {
-        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
+//        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
+        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1)
         {
             Map *map = player->GetMap();
             player->RemoveAura(75447);
