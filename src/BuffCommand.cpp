@@ -120,6 +120,8 @@ public:
 };
 
 // Remove player buffs after exiting ICC
+class ClearBuffs : public PlayerScript
+{
 public:
 
     ClearBuffs() : PlayerScript("ClearBuffs") {}
