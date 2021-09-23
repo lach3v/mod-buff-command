@@ -141,7 +141,7 @@ if (!player->GetMap()->IsRaid())
 				handler->SetSentErrorMessage(true);
 				return false;
             }
-
+      }
 };
 
 //    void OnMapChanged(Player *player) override {
