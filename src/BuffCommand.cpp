@@ -128,12 +128,20 @@ public:
     
     void OnMapChanged(Player *player) override {
 //        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
-        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1)
-        {
+//        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1)
+//        {
 //            Map *map = player->GetMap();
-            player->RemoveAura(75447);
-        }
-    }
+//            player->RemoveAura(75447);
+//        }
+//    }
+
+if (!player->GetMap()->IsRaid())
+			{
+				handler->SendSysMessage("Buffs Cleared Test");
+				handler->SetSentErrorMessage(true);
+				return false;
+            }
+
 };
 
 //    void OnMapChanged(Player *player) override {
