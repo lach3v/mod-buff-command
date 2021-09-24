@@ -137,7 +137,8 @@ public:
 
 if (!player->GetMap()->IsRaid())
 			{
-				handler->SendSysMessage("Buffs Cleared Test");
+                player->RemoveAura(75447);
+//				handler->SendSysMessage("Buffs Cleared Test");
 //				handler->SetSentErrorMessage(true);
 //				return false;
             }
