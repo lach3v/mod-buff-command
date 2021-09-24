@@ -138,8 +138,8 @@ public:
 if (!player->GetMap()->IsRaid())
 			{
 				handler->SendSysMessage("Buffs Cleared Test");
-				handler->SetSentErrorMessage(true);
-				return false;
+//				handler->SetSentErrorMessage(true);
+//				return false;
             }
       }
 };
