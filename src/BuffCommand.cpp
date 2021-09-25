@@ -126,24 +126,35 @@ public:
 
     ClearBuffs() : PlayerScript("ClearBuffs") {}
     
-    void OnMapChanged(Player *player) override {
-//        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
-//        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1)
-//        {
-//            Map *map = player->GetMap();
-//            player->RemoveAura(75447);
-//        }
-//    }
+    void ApplyBuffs(Player* player, Map* map)
+    {
 
-if (!player->GetMap()->IsRaid())
-			{
-                player->RemoveAura(75447);
-//				handler->SendSysMessage("Buffs Cleared Test");
-//				handler->SetSentErrorMessage(true);
-//				return false;
-            }
-      }
-};
+        if (!player->GetMap()->IsRaid())
+        {
+           player->RemoveAura(75447);
+        }
+        else
+        ClearBuffs(player, map);
+}
+    
+//    void OnMapChanged(Player *player) override {
+////        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
+////        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1)
+////        {
+////            Map *map = player->GetMap();
+////            player->RemoveAura(75447);
+////        }
+////    }
+
+//if (!player->GetMap()->IsRaid())
+//			{
+//                player->RemoveAura(75447);
+////				handler->SendSysMessage("Buffs Cleared Test");
+////				handler->SetSentErrorMessage(true);
+////				return false;
+//            }
+//      }
+//};
 
 //    void OnMapChanged(Player *player) override {
 //        if (sConfigMgr->GetBoolDefault("BuffCommand.Enable", true))
