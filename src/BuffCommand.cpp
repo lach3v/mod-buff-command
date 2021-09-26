@@ -3,8 +3,8 @@
 #include "World.h"
 #include "WorldSession.h"
 #include "Config.h"
-
 #include "Player.h"
+#include "Chat.h"
 
 std::unordered_map<ObjectGuid, uint32> BuffCooldown;
 
@@ -129,20 +129,34 @@ public:
 //            }
 //    }
 
+//class MyPlayer : public PlayerScript
+//{
+//public:
+//    MyPlayer() : PlayerScript("MyPlayer") { }
+
+//    void OnMapChanged(Player* player) override
+//    {
+//        if (!player->GetMap()->IsRaid())
+//        {
+//            player->RemoveAura(75447);
+//        }
+//    }
+//};
+
+// Add player scripts
 class MyPlayer : public PlayerScript
 {
 public:
     MyPlayer() : PlayerScript("MyPlayer") { }
 
-    void OnMapChanged(Player* player) override
+    void OnLogin(Player* player) override
     {
-        if (!player->GetMap()->IsRaid())
+        if (sConfigMgr->GetOption<bool>("BuffCommand.Enable", false))
         {
-            player->RemoveAura(75447);
+            ChatHandler(player->GetSession()).SendSysMessage("Buff reset module is active!");
         }
     }
 };
-
 
 // Remove player buffs after exiting ICC
 //class ClearBuffs : public PlayerScript
