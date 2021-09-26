@@ -119,6 +119,14 @@ public:
 	}
 };
 
+void OnMapChanged(Player* player)
+    {
+        if (!player->GetMap()->IsRaid())
+            {
+                player->RemoveAura(75447);
+            }
+    }
+};
 // Remove player buffs after exiting ICC
 //class ClearBuffs : public PlayerScript
 //{
@@ -126,16 +134,16 @@ public:
 
 //    ClearBuffs() : PlayerScript("ClearBuffs") {}
     
-void ApplyBuffs(Player* player, Map* map)
-    {
-        if (!player->GetMap()->IsRaid())
-            {
-                player->RemoveAura(75447);
-            }
-        else
-        ClearBuffs(player, map);
-    }
-};
+//void ApplyBuffs(Player* player, Map* map)
+//    {
+//        if (!player->GetMap()->IsRaid())
+//            {
+//                player->RemoveAura(75447);
+//            }
+//        else
+//        ClearBuffs(player, map);
+//    }
+//};
     
 //    void OnMapChanged(Player *player) override {
 ////        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
