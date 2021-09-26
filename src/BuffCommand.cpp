@@ -120,19 +120,18 @@ public:
 };
 
 // Remove player buffs after exiting ICC
-class ClearBuffs : public PlayerScript
-{
-public:
+//class ClearBuffs : public PlayerScript
+//{
+//public:
 
-    ClearBuffs() : PlayerScript("ClearBuffs") {}
+//    ClearBuffs() : PlayerScript("ClearBuffs") {}
     
-    void ApplyBuffs(Player* player, Map* map)
+void ApplyBuffs(Player* player, Map* map)
     {
-
         if (!player->GetMap()->IsRaid())
-        {
-           player->RemoveAura(75447);
-        }
+            {
+                player->RemoveAura(75447);
+            }
         else
         ClearBuffs(player, map);
     }
