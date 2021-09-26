@@ -4,6 +4,8 @@
 #include "WorldSession.h"
 #include "Config.h"
 
+#include "Player.h"
+
 std::unordered_map<ObjectGuid, uint32> BuffCooldown;
 
 void Kargatum_Buff::LoadDB()
@@ -238,6 +240,11 @@ public:
 		sKargatumBuff->LoadDB();
 	}
 };
+
+void AddMyPlayerScripts()
+{
+    new MyPlayer();
+}
 
 void AddBuffCommandScripts()
 {
