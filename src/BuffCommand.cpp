@@ -126,7 +126,7 @@ void OnMapChanged(Player* player)
                 player->RemoveAura(75447);
             }
     }
-};
+
 // Remove player buffs after exiting ICC
 //class ClearBuffs : public PlayerScript
 //{
