@@ -119,13 +119,28 @@ public:
 	}
 };
 
-void OnMapChanged(Player* player)
+//void OnMapChanged(Player* player)
+//    {
+//        if (!player->GetMap()->IsRaid())
+//            {
+//                player->RemoveAura(75447);
+//            }
+//    }
+
+class MyPlayer : public PlayerScript
+{
+public:
+    MyPlayer() : PlayerScript("MyPlayer") { }
+
+    void OnMapChanged(Player* player) override
     {
         if (!player->GetMap()->IsRaid())
-            {
-                player->RemoveAura(75447);
-            }
+        {
+            player->RemoveAura(75447);
+        }
     }
+};
+
 
 // Remove player buffs after exiting ICC
 //class ClearBuffs : public PlayerScript
