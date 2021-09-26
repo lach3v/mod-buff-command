@@ -135,7 +135,8 @@ public:
         }
         else
         ClearBuffs(player, map);
-}
+    }
+};
     
 //    void OnMapChanged(Player *player) override {
 ////        if (sConfigMgr->GetIntDefault("BuffCommand.Enable", 1) == 1 && GetVirtualMapForMapAndZone(GetMapId(),newZone) != 631)
